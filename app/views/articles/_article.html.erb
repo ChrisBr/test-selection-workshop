@@ -1,0 +1,20 @@
+<div id="<%= dom_id article %>">
+  <h1 class="text-4xl">
+    <%= article.title %>
+  </h1>
+
+  <p class="my-5">
+    <%= article.hashtags.join(",") %>
+  </p>
+
+
+  <p class="my-5">
+    <%= article.body %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this article", article, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this article', edit_article_path(article), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Rails World
+  body: The Rails Foundation is excited to announce Rails World, our first conference. It will take place on October 5 & 6 in the stunning city of Amsterdam, Netherlands.
+
+two:
+  title: Rails 7.0.8 has been released
+  body: I am happy to announce that Rails 7.0.8 has been released.

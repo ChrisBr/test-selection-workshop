@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Awesome!
+  body: This is really awesome! I will join!
+  article: one
+
+two:
+  title: Yesss!
+  body: This is the best Rails release ever!
+  article: two

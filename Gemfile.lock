@@ -1,3 +1,8 @@
+PATH
+  remote: gems/minitest-select
+  specs:
+    in_repo-minitest-select (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -136,6 +141,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
+    opener (0.1.0)
     psych (5.1.0)
       stringio
     public_suffix (5.0.3)
@@ -223,7 +229,9 @@ DEPENDENCIES
   cuprite
   debug
   importmap-rails
+  in_repo-minitest-select!
   jbuilder
+  opener
   puma (~> 5.0)
   rails (~> 7.0.8)
   sprockets-rails

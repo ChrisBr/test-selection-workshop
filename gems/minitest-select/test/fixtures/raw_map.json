@@ -1,0 +1,73 @@
+{
+  "test/models/comment_test.rb": [
+    "test/models/comment_test.rb",
+    "app/models/article.rb",
+    "app/models/comment.rb",
+    "app/models/concerns/with_hashtags.rb"
+  ],
+  "test/system/comments_test.rb": [
+    "test/system/comments_test.rb",
+    "app/models/article.rb",
+    "app/models/comment.rb",
+    "config/application.rb",
+    "app/controllers/articles_controller.rb",
+    "app/views/articles/show.html.erb",
+    "app/views/articles/_article.html.erb",
+    "app/models/concerns/with_hashtags.rb",
+    "app/views/comments/_comment.html.erb",
+    "app/views/layouts/application.html.erb",
+    "app/controllers/comments_controller.rb",
+    "app/views/comments/new.html.erb",
+    "app/views/comments/_form.html.erb",
+    "app/views/articles/index.html.erb",
+    "app/views/comments/edit.html.erb"
+  ],
+  "test/models/article_test.rb": [
+    "test/models/article_test.rb",
+    "app/models/article.rb",
+    "app/models/concerns/with_hashtags.rb"
+  ],
+  "test/controllers/articles_controller_test.rb": [
+    "test/controllers/articles_controller_test.rb",
+    "config/application.rb",
+    "app/models/article.rb",
+    "app/controllers/articles_controller.rb",
+    "app/views/articles/new.html.erb",
+    "app/views/articles/_form.html.erb",
+    "app/views/layouts/application.html.erb",
+    "app/views/articles/edit.html.erb",
+    "app/views/articles/show.html.erb",
+    "app/views/articles/_article.html.erb",
+    "app/models/concerns/with_hashtags.rb",
+    "app/models/comment.rb",
+    "app/views/comments/_comment.html.erb",
+    "app/views/articles/index.html.erb"
+  ],
+  "test/system/articles_test.rb": [
+    "test/system/articles_test.rb",
+    "app/models/article.rb",
+    "config/application.rb",
+    "app/controllers/articles_controller.rb",
+    "app/views/articles/index.html.erb",
+    "app/views/articles/_article.html.erb",
+    "app/models/concerns/with_hashtags.rb",
+    "app/views/layouts/application.html.erb",
+    "app/views/articles/new.html.erb",
+    "app/views/articles/_form.html.erb",
+    "app/views/articles/show.html.erb",
+    "app/models/comment.rb",
+    "app/views/comments/_comment.html.erb",
+    "app/views/articles/edit.html.erb"
+  ],
+  "test/controllers/comments_controller_test.rb": [
+    "test/controllers/comments_controller_test.rb",
+    "config/application.rb",
+    "app/models/article.rb",
+    "app/models/comment.rb",
+    "app/controllers/comments_controller.rb",
+    "app/views/comments/edit.html.erb",
+    "app/views/comments/_form.html.erb",
+    "app/views/layouts/application.html.erb",
+    "app/views/comments/new.html.erb"
+  ]
+}

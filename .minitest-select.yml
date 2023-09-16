@@ -1,0 +1,18 @@
+ignore:
+  - README.md
+
+always_select:
+  - test/system/articles_test.rb
+
+glob_rules:
+  - from:
+      - "config/initializers/*"
+      - "config/boot.rb"
+      - "config/application.rb"
+    to:
+      - "test/**/*_test.rb"
+  - from:
+      - "**/*.js"
+      - "**/*.css"
+    to:
+      - "test/system/**/*_test.rb"

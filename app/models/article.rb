@@ -9,7 +9,7 @@ class Article < ApplicationRecord
   private
 
   def body_mentions_rails
-    unless body.downcase.include?('rails')
+    unless body.to_s.downcase.include?('rails')
       errors.add(:body, 'doesnt mention Rails!')
     end
   end

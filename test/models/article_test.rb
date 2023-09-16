@@ -9,7 +9,7 @@ class ArticleTest < ActiveSupport::TestCase
     refute Article.new(title: "title", body: "It doesn't scale").valid?
   end
 
-  test "#hashtags extracts hashtags" do
+  test "extracts hashtags" do
     assert_includes Article.new(title: "title", body: "Rails is awesome! #rails").hashtags, "#rails"
   end
 end

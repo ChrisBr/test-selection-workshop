@@ -1,6 +1,13 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+def in_repo_gem(short_name, require: short_name)
+  full_name = "in_repo-" + short_name
+  gem full_name, path: File.join(__dir__, "gems", short_name), require: require
+end
+
+in_repo_gem("minitest-select", require: false)
+
 ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -71,4 +78,5 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "cuprite"
+  gem "opener"
 end

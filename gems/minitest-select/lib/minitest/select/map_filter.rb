@@ -35,9 +35,13 @@ module Minitest
       end
 
       def test_files_to_run_based_on_test_map
-        @changed_files.to_a.map do |file|
+        changed_files.to_a.map do |file|
           @test_map.fetch(file.squish)
         end.flatten
+      end
+
+      def changed_files
+        @changed_files - @config["ignore"].to_a
       end
     end
   end

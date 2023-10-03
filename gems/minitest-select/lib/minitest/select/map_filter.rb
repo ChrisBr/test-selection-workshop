@@ -31,7 +31,7 @@ module Minitest
       end
 
       def test_files_to_run
-        @test_files_to_run ||= test_files_to_run_based_on_test_map
+        @test_files_to_run ||= (test_files_to_run_based_on_test_map + @config["always_select"].to_a).compact.uniq
       end
 
       def test_files_to_run_based_on_test_map

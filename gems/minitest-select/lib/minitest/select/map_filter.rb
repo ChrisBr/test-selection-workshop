@@ -31,7 +31,21 @@ module Minitest
       end
 
       def test_files_to_run
-        @test_files_to_run ||= (test_files_to_run_based_on_test_map + @config["always_select"].to_a).compact.uniq
+        @test_files_to_run ||= (
+          test_files_to_run_based_on_test_map +
+          @config["always_select"].to_a +
+          test_files_based_on_glob_rule
+        ).compact.uniq
+      end
+
+      def test_files_based_on_glob_rule
+        @config["glob_rules"].flat_map do |entry|
+          entry["from"].map do |glob|
+            if changed_files.any? { |path| File.fnmatch?(glob, path.squish) }
+              entry["to"].map { |to| Dir["#{Rails.root}/#{to}"] }.map { |files| files.map { |file| normalize(file) } }
+            end
+          end
+        end.compact.flatten
       end
 
       def test_files_to_run_based_on_test_map

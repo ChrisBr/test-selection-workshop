@@ -37,16 +37,18 @@ class TestSelection
 
   def test_files_to_run
     @test_files_to_run ||= begin
-      fetch_test_files_to_run
+      fetch_test_files_to_run + always_select_files
     rescue => error
       puts "Error selecting tests: #{error.message}, falling back to all tests"
       ALL_TEST_FILES
     end
   end
 
-  def fetch_test_files_to_run
-    raise "No changed files found" if changed_files.empty?
+  def always_select_files
+    @config["always_select"].to_a.map { |file| ROOT_DIR.join(file) } # Convert the test file paths to absolute paths so we can require them
+  end
 
+  def fetch_test_files_to_run
     # Fetch the tests to run from the test map
     changed_files.to_a.map do |file|
       test_map.fetch(file.squish)

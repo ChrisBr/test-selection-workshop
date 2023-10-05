@@ -37,11 +37,21 @@ class TestSelection
 
   def test_files_to_run
     @test_files_to_run ||= begin
-      fetch_test_files_to_run + always_select_files
+      fetch_test_files_to_run + always_select_files + test_files_based_on_glob_rule
     rescue => error
       puts "Error selecting tests: #{error.message}, falling back to all tests"
       ALL_TEST_FILES
     end
+  end
+
+  def test_files_based_on_glob_rule
+    @config["glob_rules"].flat_map do |entry|
+      entry["from"].map do |glob|
+        if changed_files.any? { |path| File.fnmatch?(glob, path.squish) }
+          entry["to"].map { |to| Dir["#{ROOT_DIR}/#{to}"] }
+        end
+      end
+    end.compact.flatten
   end
 
   def always_select_files

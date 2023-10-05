@@ -14,8 +14,9 @@ class TestSelection
     new.run
   end
 
-  def initialize(env: ENV)
+  def initialize(env: ENV, config_path: ROOT_DIR.join(".minitest-select.yml"))
     @env = env
+    @config = YAML.load(File.read(config_path))
   end
 
   def run
@@ -61,7 +62,7 @@ class TestSelection
   end
 
   def changed_files
-    @env["CHANGED_FILES"].to_s.lines.map(&:squish)
+    @env["CHANGED_FILES"].to_s.lines.map(&:squish) - @config["ignore"].to_a
   end
 end
 
